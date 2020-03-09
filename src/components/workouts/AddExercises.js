@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-12T11:44:33+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T14:10:57+00:00
+ * @Last modified time: 2020-03-09T14:22:43+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -69,7 +69,7 @@ class AddExercises extends React.Component {
     //axios post with object passed to add exercise to workout
     axios
       .post(
-        "http://localhost:4000/workouts/" +
+        process.env.REACT_APP_API_URL + '/' +
           this.props.workoutId +
           "/exercises/create",
         newExercise

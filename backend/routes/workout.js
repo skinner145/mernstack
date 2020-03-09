@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-14T11:58:49+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T13:49:24+00:00
+ * @Last modified time: 2020-03-09T14:06:39+00:00
  */
  const passport = require('passport');
  const settings = require('../config/passport')(passport);
@@ -61,6 +61,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 
 //creates workout
  router.route('/create').post(passport.authenticate('jwt', { session: false}), (req, res) => {
+   
    //gets token
    const token = getToken(req.headers);
    //sets object passed in axios to workout constant

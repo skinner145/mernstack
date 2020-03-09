@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-13T15:12:17+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T14:02:57+00:00
+ * @Last modified time: 2020-03-09T14:23:39+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -36,7 +36,7 @@ class EditWorkoutExercise extends React.Component {
     //sets values to matching value from database
     axios
       .get(
-        "http://localhost:4000/workouts/" +
+        process.env.API_URL + "/" +
           this.props.match.params.wid +
           "/exercises/" +
           this.props.match.params.eid

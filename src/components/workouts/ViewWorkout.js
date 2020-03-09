@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-12T12:02:20+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T13:49:26+00:00
+ * @Last modified time: 2020-03-09T14:24:09+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -21,7 +21,7 @@ class ViewWorkout extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/workouts/" + this.props.match.params.id)
+      .get(process.env.API_URL + "/workouts/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           workout: res.data, //response data stored in workout array

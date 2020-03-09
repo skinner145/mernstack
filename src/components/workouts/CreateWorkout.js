@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-05T17:50:42+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T14:06:36+00:00
+ * @Last modified time: 2020-03-09T14:22:54+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -41,7 +41,7 @@ class CreateWorkout extends React.Component {
     );
     //axios post to create workout
     axios
-      .post("http://localhost:4000/workouts/create", newWorkout)
+      .post(process.env.REACT_APP_API_URL + "/workouts/create", newWorkout)
       .then(res => {
         console.log(res.data);
         this.props.history.push("/workouts/myworkouts");

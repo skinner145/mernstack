@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-05T17:50:29+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T13:39:15+00:00
+ * @Last modified time: 2020-03-09T14:24:39+00:00
  */
 import React from 'react';
 import axios from 'axios';
@@ -19,7 +19,7 @@ class WorkoutList extends React.Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:4000/workouts')//retireving all workouts
+    axios.get(process.env.API_URL + '/workouts')//retireving all workouts
     .then(res => {
       this.setState({
         workouts: res.data //storing response data in workouts array
@@ -31,7 +31,7 @@ class WorkoutList extends React.Component {
   }
 
   componentDidUpdate(){//if component updates it performs the same action as componentDidMount
-    axios.get('http://localhost:4000/workouts')
+    axios.get(process.env.API_URL + '/workouts')
     .then(res => {
       this.setState({
         workouts: res.data

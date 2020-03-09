@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-04T17:42:21+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T14:26:45+00:00
+ * @Last modified time: 2020-03-09T14:25:26+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -23,7 +23,7 @@ class ExerciseList extends React.Component {
   //retireves exercieses and stores them in exercise array
   componentDidMount() {
     axios
-      .get("http://localhost:4000/exercises")
+      .get(process.env.API_URL + "/exercises")
       .then(res => {
         this.setState({
           exercises: res.data

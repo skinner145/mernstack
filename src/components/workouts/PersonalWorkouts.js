@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-05T17:50:29+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T13:56:04+00:00
+ * @Last modified time: 2020-03-09T14:23:50+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -21,7 +21,7 @@ class PersonalWorkouts extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/workouts")
+      .get(process.env.API_URL + "workouts")
       .then(res => {
         this.setState({
           workouts: res.data //response data stored in workouts

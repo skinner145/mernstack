@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-13T15:12:17+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-17T15:07:56+00:00
+ * @Last modified time: 2020-03-09T14:23:16+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -28,7 +28,7 @@ class EditWorkoutExercise extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "http://localhost:4000/workouts/" +
+        prcoess.env.REACT_APP_API_URL + "/workouts/" +
           this.props.workoutId +
           "/exercises/" +
           this.props.exerciseId
