@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-03T15:07:24+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-02-14T12:35:49+00:00
+ * @Last modified time: 2020-03-09T13:39:47+00:00
  */
 const express = require('express');
 const app = express();
@@ -15,8 +15,7 @@ const muscleRoutes = require('./routes/muscle');;
 const workoutRoutes = require('./routes/workout');
 const authRouter = require('./routes/auth');
 
-const port = 4000;
-
+const port = process.env.PORT || 4000;
 
 
 require('dotenv').config();
