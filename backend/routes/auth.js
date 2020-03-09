@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-13T17:39:44+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T14:47:57+00:00
+ * @Last modified time: 2020-03-09T15:59:14+00:00
  */
  //auth routes
  //import passport and jwt for user auth
@@ -87,7 +87,7 @@ router.post('/register', (req, res) => {
         });
       }
       //create session for user
-      let token = jwt.sign(user.toJSON(), process.env.API_SECRET);
+      let token = jwt.sign(user.toJSON(), 'mernauth');
       return res.json({
         success: true,
         message: 'Account created for user',
@@ -128,7 +128,7 @@ router.post('/login', (req, res)=> {
     else{
       //if user exists create session and information correct
       if(user.validPassword(password)){
-        let token = jwt.sign(user.toJSON(), process.env.API_SECRET);
+        let token = jwt.sign(user.toJSON(), 'mernauth');
         res.json({success: true, token: 'JWT ' + token});
       }
       else {
