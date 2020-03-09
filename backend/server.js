@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-03T15:07:24+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T18:23:49+00:00
+ * @Last modified time: 2020-03-09T18:27:39+00:00
  */
 const express = require('express');
 const app = express();
@@ -44,9 +44,9 @@ app.use('/account', authRouter);
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('../build'));
-  app.get('*', () => (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  })
+  app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
 }
 
 app.listen(port, function() {
