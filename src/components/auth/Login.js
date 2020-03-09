@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-14T16:02:44+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T14:26:01+00:00
+ * @Last modified time: 2020-03-09T14:48:38+00:00
  */
 
 
@@ -52,7 +52,7 @@ export default class Login extends Component {
       password: this.state.password
     }
     //axios post with user object passed through
-    axios.post(process.env.API_URL + '/account/login', user)
+    axios.post(process.env.REACT_APP_API_URL + '/account/login', user)
       .then(res => {
         localStorage.setItem('jwtToken', res.data.token);
       })

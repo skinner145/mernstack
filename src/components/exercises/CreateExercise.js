@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-04T17:42:32+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T14:24:58+00:00
+ * @Last modified time: 2020-03-09T14:48:46+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -59,7 +59,7 @@ class CreateExercise extends React.Component {
     );
     //axios post with object passed to createt new exercise
     axios
-      .post(process.env.API_URL + "/exercises/create", newExercise)
+      .post(process.env.REACT_APP_API_URL + "/exercises/create", newExercise)
       .then(res => console.log(res.data));
       //state reset
     this.setState({

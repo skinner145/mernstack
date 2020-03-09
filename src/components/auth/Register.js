@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-14T15:53:24+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T14:25:50+00:00
+ * @Last modified time: 2020-03-09T14:48:43+00:00
  */
 import React, { Component } from "react";
 import axios from "axios";
@@ -66,7 +66,7 @@ export default class Register extends Component {
     };
     //axios post with user object passed
     axios
-      .post(process.env.API_URL + "/account/register", user)
+      .post(process.env.REACT_APP_API_URL + "/account/register", user)
       .then(res => {
         localStorage.setItem("jwtToken", res.data.token);
         console.log(res.data);

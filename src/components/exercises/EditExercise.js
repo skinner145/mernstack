@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-03T14:41:47+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T14:25:09+00:00
+ * @Last modified time: 2020-03-09T14:48:52+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -27,7 +27,7 @@ class EditExercise extends React.Component {
   //setting variables to data retrieved from database
   componentDidMount() {
     axios
-      .get(process.env.API_URL + "/exercises/" + this.props.match.params.id)
+      .get(process.env.REACT_APP_API_URL + "/exercises/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           name: res.data.name,

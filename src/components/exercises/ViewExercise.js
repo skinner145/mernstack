@@ -2,7 +2,7 @@
  * @Author: Arthur Skinner
  * @Date:   2020-02-05T17:50:29+00:00
  * @Last modified by:   Arthur Skinner
- * @Last modified time: 2020-03-09T14:25:38+00:00
+ * @Last modified time: 2020-03-09T14:48:59+00:00
  */
 import React from "react";
 import axios from "axios";
@@ -23,7 +23,7 @@ class ViewExercise extends React.Component {
 
   componentDidMount() {
     axios
-      .get(process.env.API_URL + "/exercises/" + this.props.match.params.id)
+      .get(process.env.REACT_APP_API_URL + "/exercises/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           exercise: res.data,//store exercise in exercise array
